@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="layouts :: header"></head>
+
+<body>
+<nav th:replace="layouts :: navbar"></nav>
+
+<h3>Projects List</h3>
+	<table class="table table-hover">
+	<thead>
+		<tr>
+		<th>Project Name</th>
+		<th>Project Stage</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr th:each="aProject : ${projectsList}">
+		<td th:text="${aProject.name}" />
+		<td th:text="${aProject.stage}" />
+		</tr>
+	</tbody>	
+	
+	</table>
+	<button type="button" class="btn btn-outline-primary" 
+	onclick="window.location.href = 'projects/new';">Add project</button>
+	</body>
+</html>
